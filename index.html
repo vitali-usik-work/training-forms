@@ -5,35 +5,51 @@
     <title>Form</title>
     <link rel="stylesheet/less" href="less/main/main.less" />
     <script type="text/javascript" src="script/less.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   </head>
   <body>
     <div class="wrapper">
       <div class="headline">
         <h4>Headline</h4>
-        <input type="text">
+        <div class="input-wrap">
+        <input id="headline-input" type="text" placeholder="Please add a headline" maxlength="40">
+        <p id="counter">0/40</p>
+        </div>
       </div>
       <div class="newsbody">
         <h4>News body*</h4>
-        <input type="text">
+        <textarea type="text" placeholder="Add news body"></textarea>
       </div>
-      <div class="location">
+      <div class="location clearfix"> <!-- Почему-то clearfix через after не работает, может знаешь почему!? Ниже я добавил блок ".clear" с ним норм все... -->
         <h4>Location</h4>
-        <input type="text">
+        <input type="text" class="text" placeholder="eg. City or Town">
       </div>
-      <div class="author-name">
+      <div class="author-name clearfix">
         <h4>Author name</h4>
-        <input type="text">
-        <input type="checkbox" id="check">
+        <input type="text" class="text" placeholder="Author name"><br>
+        <input type="checkbox" id="check" hidden>
         <label for="check">Don`t show my name</label>
       </div>
+      <div class="clear"></div> 
       <div class="quiz-title">
         <h4>Quiz title?*</h4>
+        <div class="quiz">
+          <div id="selector"><a>Please select an answer:</a></div>
+          <ul id="select-options">
+            <li><a class="title">Tile 1</a></li>
+            <li><a class="title">Tile 2</a></li>
+            <li><a class="title">Tile 3</a></li>
+            <li><a class="title">Tile 4</a></li>
+            <li><a class="title">Tile 5</a></li>
+          </ul>
+        </div>
       </div>
-      <div id="save-button">save</div>
+      <div id="save-button">Save</div>
       <div class="footer">
-        <p>By clicking Continue you agree to our Terms & Conditions</p>
-        <p>Required fields*</p>
+        <p id="required">Required fields*</p>
+        <p>By clicking Continue you agree to our <b>Terms & Conditions</b></p>
       </div>
     </div>
+    <script src="script/script.js"></script>
   </body>
 </html>
