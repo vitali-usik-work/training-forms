@@ -1,0 +1,33 @@
+.input-decoration {
+  border: 1px solid #dddddd;
+  font-family: @main-font;
+  font-size: 14px;
+  color: @color-dark-grey;
+}
+.placeholder-decoration {  
+  ::-webkit-input-placeholder {
+    color: @color-light-grey;
+  }
+  ::-moz-placeholder {
+   color: @color-light-grey;
+  }
+  :-moz-placeholder {
+    color: @color-light-grey;
+  }
+  :-ms-input-placeholder {
+    color: @color-light-grey;
+  }
+
+  :focus::-webkit-input-placeholder {
+    color:transparent;
+  }
+  :focus:-moz-placeholder {
+    color:transparent;
+  }
+  :focus::-moz-placeholder {
+    color:transparent;
+  }
+  :focus:-ms-input-placeholder {
+    color:transparent;
+  }
+}
