@@ -66,24 +66,13 @@ textarea {
 }
 
 .location {
-  width: 50%;
-  float: left;
-  
-  .text {
-    width: 245px;
-    height: 50px;
-    padding-left: 45px;
-    background: url('../img/location-icon.png') no-repeat;
-    background-position: 14px 50%;
-  }
+  .location-author('../img/location-icon.png');
 }
 
 .author-name {
-  .location;
-  text-align: left;
-
+  .location-author('../img/name-icon.png');
+  
   .text {
-    background-image: url('../img/name-icon.png');
     margin-bottom: 11px;
   }
   
@@ -168,12 +157,7 @@ textarea {
         cursor: pointer;
         transition: 0.2s;
       }
-
-      a:hover {
-        border: 1px solid darken(@color-light-grey, 20%);
-        color: darken(@color-light-grey, 20%);
-      }
-    }
+   }
 
     #select-options {
       display: none;
