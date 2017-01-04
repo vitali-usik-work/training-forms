@@ -5,37 +5,27 @@ var TITLE_LIST = $('.title');
 var HEADLINE_INPUT_ELEMENT = $('#headline-input');
 var COUNTER_ELEMENT = $('#counter');
 var HEADLINE_INPUT_MAXLENGTH = '/' + HEADLINE_INPUT_ELEMENT.attr('maxlength');
+var ACTIVE_OPTIONS_CLASS = 'active-options';
 
-var selectObj = {
-  active: false,
-  displayMenu: function() {
-    SELECT_OPTIONS_ELEMENT.slideDown();
-    $(document).click(function(event) { //не уверен что правильно эту функцию расположил, но вроде работает, мгновенно сворачивает select если тыкнуть в любом месте
-      var target = event.target;
-      if (!$(target).is(SELECT_ID) && !$(target).parents().is(SELECT_ID)) {
-        SELECT_OPTIONS.hide();
-        selectObj.active = false;
-      }
-    });
-    selectObj.active = true;
-  },
-  hideMenu: function() {
+SELECT_ELEMENT.click(function optionsDropdown() {
+  if(SELECT_ELEMENT.hasClass(ACTIVE_OPTIONS_CLASS)) {
     SELECT_OPTIONS_ELEMENT.slideUp();
-    selectObj.active = false;
-  }
-}
-
-SELECT_ELEMENT.click(function() {
-  if(selectObj.active) {
-    selectObj.hideMenu();
+    SELECT_ELEMENT.removeClass(ACTIVE_OPTIONS_CLASS);
   } else {
-    selectObj.displayMenu();
+    SELECT_OPTIONS_ELEMENT.slideDown();
+    SELECT_ELEMENT.addClass(ACTIVE_OPTIONS_CLASS);
   }
 });
-
+$(document).click(function(event) {
+  var target = event.target;
+  if (!$(target).is(SELECT_ID) && !$(target).parents().is(SELECT_ID)) {
+    SELECT_OPTIONS_ELEMENT.hide();
+    SELECT_ELEMENT.removeClass(ACTIVE_OPTIONS_CLASS);
+  }
+});
 TITLE_LIST.click(function() {
   var title = $(this).html();
-  SELECT.children().html(title);
+  SELECT_ELEMENT.children().html(title);
 });
 
 HEADLINE_INPUT_ELEMENT.keyup(function() {

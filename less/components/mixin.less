@@ -4,6 +4,7 @@
   font-size: 14px;
   color: @color-dark-grey;
 }
+
 .placeholder-decoration {  
   ::-webkit-input-placeholder {
     color: @color-light-grey;
@@ -29,5 +30,18 @@
   }
   :focus:-ms-input-placeholder {
     color:transparent;
+  }
+}
+
+.location-author(@bg-url) {
+  width: 50%;
+  float: left;
+  
+  .text {
+    width: 245px;
+    height: 50px;
+    padding-left: 45px;
+    background: url(@bg-url) no-repeat;
+    background-position: 14px 50%;
   }
 }

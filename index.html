@@ -19,17 +19,18 @@
         <h4>News body*</h4>
         <textarea type="text" placeholder="Add news body"></textarea>
       </div>
-      <div class="location clearfix"> <!-- Почему-то clearfix через after не работает, может знаешь почему!? Ниже я добавил блок ".clear" с ним норм все... -->
-        <h4>Location</h4>
-        <input type="text" class="text" placeholder="eg. City or Town">
+      <div class="location-author-wrapper clearfix">
+        <div class="location">
+          <h4>Location</h4>
+          <input type="text" class="text" placeholder="eg. City or Town">
+        </div>
+        <div class="author-name">
+          <h4>Author name</h4>
+          <input type="text" class="text" placeholder="Author name"><br>
+          <input type="checkbox" id="check" hidden>
+          <label for="check">Don`t show my name</label>
+        </div>
       </div>
-      <div class="author-name clearfix">
-        <h4>Author name</h4>
-        <input type="text" class="text" placeholder="Author name"><br>
-        <input type="checkbox" id="check" hidden>
-        <label for="check">Don`t show my name</label>
-      </div>
-      <div class="clear"></div> 
       <div class="quiz-title">
         <h4>Quiz title?*</h4>
         <div class="quiz">
