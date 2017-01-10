@@ -103,20 +103,25 @@ textarea {
 
 #save-button {
   text-align: center;
-  width: 220px;
-  height: 50px;
+  padding: 0 95px;
   margin-bottom: 20px;
   background-color: #b2b3b4;
   border-radius: 25px;
   color: #fff;
   font-weight: bold;
   line-height: 53px;
-  cursor: pointer;
   transition: 0.2s;
-}
+  outline: none;
 
-#save-button:hover {
-  background-color: darken(#b2b3b4, 20%);
+  &.activated {
+    background-color: #37B26D;
+    cursor: pointer;
+  }
+  
+  &:active,
+  &:focus {
+    outline: none;
+  }
 }
 
 .footer {
@@ -156,6 +161,18 @@ textarea {
         line-height: 47px;
         cursor: pointer;
         transition: 0.2s;
+
+        &:hover {
+          border-color: darken(#dddddd, 20%);
+        }
+
+        &.valid {
+          border-color: #37B26D;
+        }
+
+        &.invalid {
+          border-color: #B90016;
+        }
       }
    }
 
@@ -166,7 +183,23 @@ textarea {
       li {
         #selector;
         background: #fff;
+        a {
+          border-top-color: transparent;
+          &:hover {
+            border-color: #dddddd;
+            border-top-color: transparent;
+            border-bottom-color: darken(#dddddd, 20%);
+          }
+        }
       }
     }
   }
+}
+
+.valid {
+  border-color: #37B26D;
+}
+
+.invalid {
+  border-color: #B90016;
 }
